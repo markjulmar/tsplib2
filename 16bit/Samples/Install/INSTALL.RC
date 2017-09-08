@@ -1,0 +1,138 @@
+//Microsoft App Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#include ""INSTALL.r2c""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDR_MAINFRAME           ICON    DISCARDABLE     "INSTALL.ICO"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INSTALL_DIALOG DIALOG DISCARDABLE  0, 0, 250, 151
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "JulMar TSP Installation Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,71,127,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,127,127,50,14
+    ICON            IDR_MAINFRAME,IDC_STATIC,5,10,18,20
+    LTEXT           "This dialog installs/removes the different JulMar TAPI service providers from your Windows 3.x or Windows 95 system.\r\n\r\nIt is intended as a sample program.",
+                    IDC_STATIC,34,3,207,36
+    GROUPBOX        "Available TAPI Service Providers",IDC_STATIC,9,44,232,
+                    52
+    CONTROL         "ATSPV2 Analog Modem Sample provider",IDC_SP_ATSP,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,30,59,143,11
+    CONTROL         "DSSP Digital Emulated Sample provider",IDC_SP_DSSP,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,30,73,143,11
+    LTEXT           "A ""checked"" state indicates that the provider is currently installed.",
+                    IDC_STATIC,14,103,220,12
+    LTEXT           "",IDC_TEXT1,180,60,57,11
+    LTEXT           "",IDC_TEXT2,180,74,57,11
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROVIDERS           "Providers"
+    IDS_NOATTRIBS           "The correct date/time and attributes were not applied to the destination file."
+    IDS_NEXTPPID            "NextProviderID"
+    IDS_NUMPROV             "NumProviders"
+    IDS_PROVFILE            "ProviderFilename%d"
+    IDS_PROVID              "ProviderID%d"
+    IDS_TAPIDLL             "TAPI.DLL"
+    IDS_NOTAPI              "TAPI has not been installed on this system.\nPlease install TAPI before attempting to install\nany of the JulMar service providers."
+    IDS_BADINSTALL1         "Problem dynamically adding a new device through TAPI.\nThe TAPI error code was '0x%lx'.\n\nInstall is  adding the device manually, but Windows must be \nshutdown to recognize the new device."
+    IDS_BADINSTALL2         "The installation was unable to locate a configuration\nentrypoint for this TSP.  It was not able to be configured."
+    IDS_BADREMOVE           "Problem dynamically removing the provider.\nThe provider will be removed from the system,\nbut you will need to reboot to see the changes."
+    IDS_NAME                "JulMar TSP Install"
+    IDS_DESCRIPTION         "Installs/Removes the JulMar Sample TAPI drivers."
+    IDS_MISSINGFILES        "(Missing Files)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DSSP_REQ1           "DSSP.TSP"
+    IDS_DSSP_REQ2           "DSSPEXE.EXE"
+    IDS_ATSP_REQ1           "ATSPV2.TSP"
+    IDS_ATSP_REQ2           "ATV2EXE.EXE"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_WRONGVERSION        "These service providers are only designed to run under Windows 3.1 and Windows 95."
+    IDS_INIFILEERR          "The TELEPHON.INI file is corrupt.  Install and TAPI are unable\nto add or remove provider information at this time.  Please rebuild\nthe .INI file in order to proceed."
+END
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#include "INSTALL.r2c"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

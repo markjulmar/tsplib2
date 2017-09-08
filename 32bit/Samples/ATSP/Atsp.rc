@@ -1,0 +1,271 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CFGDLG DIALOG DISCARDABLE  20, 15, 213, 158
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ATSP32 Modem Line Configuration"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_PHONE,IDC_STATIC,8,6,20,20
+    LTEXT           "&Communications Port",IDC_STATIC,44,3,70,9,NOT WS_GROUP
+    COMBOBOX        IDC_PORT,44,14,76,52,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "&Speed (DTE Rate)",IDC_STATIC,132,3,70,10,NOT WS_GROUP
+    COMBOBOX        IDC_SPEED,132,14,76,53,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "&Phone Number for this line",IDC_STATIC,16,33,102,8
+    EDITTEXT        IDC_LINEADDR,16,44,94,12,ES_AUTOHSCROLL
+    LTEXT           "&Name of person owning phone:",IDC_STATIC,16,60,164,8
+    EDITTEXT        IDC_ADDRNAME,16,71,164,12,ES_AUTOHSCROLL
+    LTEXT           "Modem &Initialization String",IDC_STATIC,16,89,115,8
+    EDITTEXT        IDC_INITSTR,16,100,164,12,ES_AUTOHSCROLL
+    CONTROL         "&Dial using Pulse Mode",IDC_PULSE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,14,118,83,10
+    PUSHBUTTON      "OK",IDOK,28,137,70,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,114,137,70,14
+END
+
+IDD_TALKDROP DIALOG DISCARDABLE  20, 15, 182, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Call Status"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Talk",IDOK,35,66,57,12
+    PUSHBUTTON      "Hang &Up",IDCANCEL,96,66,57,12
+    ICON            IDI_PHONE,IDC_STATIC,6,5,18,20
+    CTEXT           "Lift the receiver and click Talk.\r\rTo disconnect, click Hang-Up.",
+                    IDC_STATIC,35,11,121,32
+    LTEXT           "Elapsed Time:",IDC_STATIC,40,46,51,9
+    LTEXT           "0 seconds",IDC_ELAPSEDTIME,106,46,52,9
+END
+
+IDD_PROVCFG DIALOG DISCARDABLE  0, 0, 221, 94
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "ATSP32 Sample TAPI Service Provider"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_MODEMLIST,7,21,141,65,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Installed Modem Devices:",IDC_STATIC,7,7,207,10
+    PUSHBUTTON      "&Add",IDC_ADD,162,20,52,17
+    PUSHBUTTON      "&Remove",IDC_REMOVE,162,39,52,17
+    PUSHBUTTON      "&Configure",IDC_CONFIG,162,57,52,17
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CFGDLG DLGINIT
+BEGIN
+    IDC_PORT, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    IDC_PORT, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    IDC_PORT, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    IDC_PORT, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    IDC_SPEED, 0x403, 4, 0
+0x3033, 0x0030, 
+    IDC_SPEED, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    IDC_SPEED, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    IDC_SPEED, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    IDC_SPEED, 0x403, 6, 0
+0x3431, 0x3034, 0x0030, 
+    IDC_SPEED, 0x403, 6, 0
+0x3832, 0x3038, 0x0030, 
+    IDC_SPEED, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PHONE               ICON    DISCARDABLE     "PHONE.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_TALKDROP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 181
+    END
+
+    IDD_PROVCFG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 214
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 87
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "32-bit ATSP Modem Sample\0"
+            VALUE "CompanyName", "JulMar Entertainment\0"
+            VALUE "FileDescription", "32-bit ATSP Modem Sample\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "atsp32\0"
+            VALUE "LegalCopyright", "Copyright © 1997 JulMar Entertainment\0"
+            VALUE "OriginalFilename", "atsp32.tsp\0"
+            VALUE "ProductName", "JulMar Entertainment atsp32\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDS_PROVIDERNAME        "ATSP V2.00 (C++) Example"
+    IDS_NORESPONSE          "The modem does not seem to be responding to requests.\nPlease check the serial connection to the modem and make sure it\nis properly setup in the configuration dialog for ATSP."
+    IDS_LINENAME            "ATSP32 Modem Line %ld"
+    IDS_ADDRNAME            "AddressName"
+    IDS_COMPANYNAME         "JulMar"
+    IDS_CR                  "\r"
+    IDS_COMMPORT            "ComPort"
+    IDS_COMMANDSTATE        "+++"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDS_BAUD                "Speed"
+    IDS_PULSE               "PulseDial"
+    IDS_INITSTR             "InitString"
+    IDS_LINEADDR            "LineAddress"
+    IDS_OFFHOOK             "ATDW;\r"
+    IDS_MODEMINIT           "ATE0V1S0=0 L0M1X4S11=%luS8=%luS7=%lu%s\r"
+    IDS_DIAL                "ATD%c%s"
+    IDS_MODEMATDT           "ATD\r"
+    IDS_HANGUP              "ATH\r"
+    IDS_ERR_INVALIDPORT     "You have not selected a valid COMM port."
+    IDS_ERR_INVALIDBAUD     "You have not selected a valid data rate."
+    IDS_ERR_NOLINEADDR      "You have not supplied a line address (phone #)."
+    IDS_PROVIDER            "Provider%ld"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESETMODEM          "AT&F0\r"
+    IDS_ANSWER              "ATA\r"
+    IDS_ATZ                 "ATZ\r"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "afxres.rc"  // Standard components
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

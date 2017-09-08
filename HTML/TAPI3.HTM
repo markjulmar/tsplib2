@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<title>Microsoft Windows Platform SDK Contents</title>
+</head>
+
+<body bgcolor="#FFFFFF" alink=#23238E vlink=#000000 link=#23238E>
+
+<TABLE cellspacing=3 cellpadding=3>
+<TR valign=top>
+<TD colspan=2>
+
+
+<p><font size="4" face="Verdana, Arial, Helvetica"><a name="intro"><strong>Support
+for TAPI 3.0 (Windows 2000 Release Candidate 1)</strong></a></font></p>
+
+<p>This version of TSP++ includes preliminary support for TAPI 3.0 as exposed in Windows
+2000 RC1. It should be noted that Windows 2000 is currently in beta and that the final
+interface for TAPI has not been completed.&nbsp; This means that the TSP++ interface may
+change as further betas are released (and as Windows 2000 evolves). In addition, some of
+the support in Windows 2000 is preliminary and may not work as documented or as expected.</p>
+
+<table border="1" width="100%">
+  <tr>
+    <td width="100%"><strong>NOTE:</strong> One omission from our support is the call-hub
+    functions <strong>TSPI_lineGetCallHubTracking</strong> and <strong>TSPI_lineSetCallHubTracking</strong>.
+    Recent conversations with the Microsoft development team indicated that these functions
+    (along with all the undocumented <strong>TSPI_providerChangeUser</strong> and new <strong>TSPI
+    </strong>ACD agent functions) are being removed from TAPI 3 due to time constraints related
+    to the release of Windows 2000. In order to prevent confusion they have been removed from this build of TSP++.</td>
+  </tr>
+</table>
+
+<p>In order to use the TAPI 3 support, you will need the latest version of <strong>TAPI.H</strong>
+and<strong> TSPI.H</strong>.&nbsp; Both of these may be obtained from the Windows 2000
+Platform SDK.&nbsp; If the following definitions are not in <strong>TSPI.H</strong>
+then you need a newer version of the headers:</p>
+
+<p><strong><u>TSPI_lineGetCallIDs<br>
+TSPI_lineMSPIdentify<br>
+TSPI_lineCreateMSPInstance<br>
+TSPI_lineCloseMSPInstance</u></strong></p>
+
+<p>In addition, the latest TAPI.H header has a new requirement on <strong>BASETSD.H</strong>
+ for the <b>DWORD_PTR</b> typedef.</p>
+
+<p>By default, the TAPI 3 support is <em>compiled out</em> of the shipped TSP++ library.
+This is to allow the library to be used with older versions of TSPI.H which don't have the
+newer definitions. To enable TAPI 3 support, you will need to recompile the source code
+into new libraries. To do this, pull up the <strong>SPLIB32.DSP </strong>project and build
+the <strong>TAPI3BetaRelease</strong> or <strong>TAPI3BetaDebug</strong> configurations in
+both the SPLIB and SPLUI projects. This will create new libraries with TAPI 3.0 support.</p>
+
+<p>Your TSP project must then correctly set the <strong>TAPI_CURRENT_VERSION</strong> flag
+to 3.0 to add the proper TAPI support into your project. If this is done, TSP++ will
+automatically use the newly built libraries rather than the shipped versions.</p>
+
+<p>The TSPWizard and <strong>JTSPTRC.DLL</strong> both fully support this beta with no
+changes.</p>
+
+<p>The following class has been added or modified for TAPI3 support:</p>
+
+<h2><font color="#0000FF" size="3"><u>CMSPDriver</u></font></h2>
+
+<p><font size="2" face="Arial">This new class is used to encapsulate a connection to a
+Media Service Provider. This is created/destroyed through the new <strong>TSPI_lineCreateMSPInstance</strong>
+and <strong>TSPI_lineCloseMSPInstance</strong> TSPI functions. The <strong>CMSPDriver</strong>
+objects are stored in a new array at the <strong>CTSPIAddressInfo</strong> level. For more
+information on media service providers, see the TAPI 3.0 documentation from Microsoft.</font></p>
+
+<table border="0" width="730" height="89">
+  <tr>
+    <td width="247" height="19"><font size="2" face="Arial"><strong>GetLineOwner</strong></font></td>
+    <td width="475" height="19"><font size="2" face="Arial">Returns the line related to this
+    MSP connection.</font></td>
+  </tr>
+  <tr>
+    <td width="247" height="18"><font size="2" face="Arial"><strong>GetAddressOwner</strong></font></td>
+    <td width="475" height="18"><font size="2" face="Arial">Returns the address related to
+    this MSP connection.</font></td>
+  </tr>
+  <tr>
+    <td width="247" height="18"><font size="2" face="Arial"><strong>SendData</strong></font></td>
+    <td width="475" height="18"><font size="2" face="Arial">Sends an arbitrary piece of data
+    to the MSP driver.</font></td>
+  </tr>
+  <tr>
+    <td width="247" height="18"><font size="2" face="Arial"><strong>GetTapiHandle</strong></font></td>
+    <td width="475" height="18"><font size="2" face="Arial">Returns the opaque TAPI handle to
+    the MSP driver.</font></td>
+  </tr>
+</table>
+
+<h2><font color="#0000FF" size="2" face="Arial"><u>TMSPArray</u></font></h2>
+
+<p><font size="2" face="Arial">This new STL array typedef is used to hold multiple <strong>CMSPDriver</strong>
+objects.</font></p>
+
+<h2><font color="#0000FF" size="2" face="Arial"><u>CTSPILineConnection</u></font></h2>
+
+<p><font size="2" face="Arial">This class has been modified to support the new TSPI
+entrypoints in TAPI 3.0 related to line handles:</font></p>
+
+<table border="0" width="728">
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>CreateAddress (modified)</strong></font></td>
+    <td width="472"><font size="2" face="Arial">A new parameter <strong>dwAddressType</strong>
+    has been added to the end of the parameter list. It defaults to <strong>LINEADDRESSTYPE_PHONE</strong>,
+    but can be passed in to allow for different address types as defined in TSPI.H</font></td>
+  </tr>
+  <tr>
+    <td width="249"><font size="2" face="Arial"><strong>SetMSPGUID (new)</strong></font></td>
+    <td width="471"><font size="2" face="Arial">This sets the GUID for the associated MSP
+    driver. This enables the MSP support for the given line device. If this is <em>not</em>
+    invoked, then no MSP driver will be available for the line.</font></td>
+  </tr>
+  <tr>
+    <td width="249"><font size="2" face="Arial"><strong>MSPIdentify (new)</strong></font></td>
+    <td width="471"><font size="2" face="Arial">Available override for the <strong>TSPI_lineMSPIdentify</strong>
+    function. It is handled automatically by TSP++</font></td>
+  </tr>
+  <tr>
+    <td width="249"><font size="2" face="Arial"><strong>ReceiveMSPData (new)</strong></font></td>
+    <td width="471"><font size="2" face="Arial">Available override for the <strong>TSPI_lineReceiveMSPData</strong>
+    method. It performs no function by default.</font></td>
+  </tr>
+</table>
+
+<h2><font color="#0000FF" size="2" face="Arial"><u>CTSPIAddressInfo</u></font></h2>
+
+<p><font size="2" face="Arial">This class has been modified to support the new TSPI
+entrypoints in TAPI 3.0 which supply address-id parameters:</font></p>
+
+<table border="0" width="728">
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>Init (modified)</strong></font></td>
+    <td width="472"><font size="2" face="Arial">A new parameter <strong>dwAddressType</strong>
+    has been added to the end of the parameter list. It defaults to <strong>LINEADDRESSTYPE_PHONE</strong>
+    as per the above change in <strong>CTSPILineConnection::CreateAddress</strong></font></td>
+  </tr>
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>GetAddressType (new)</strong></font></td>
+    <td width="472"><font size="2" face="Arial">This returns the address type for this address
+    as per the <strong>LINEADDRESSTYPE</strong> constants in TSPI.H</font></td>
+  </tr>
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>CreateMSPInstance (new)</strong></font></td>
+    <td width="472"><font size="2" face="Arial">This is called by the <strong>TSPI_lineCreateMSPInstance</strong>
+    function to create a new <strong>CMSPDriver</strong> object and associated it to the given
+    address. It is handled automatically by TSP++ but may be overridden to catch MSP object
+    creation.</font></td>
+  </tr>
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>CloseMSPInstance</strong> <strong>(new)</strong></font></td>
+    <td width="472"><font size="2" face="Arial">This is called by the <strong>TSPI_lineCloseMSPInstance</strong>
+    function. It deletes the given MSP driver instance and removes it from the instance array.
+    It is handled automatically by TSP++ but may be overridden to catch MSP destruction.</font></td>
+  </tr>
+</table>
+
+<h2><font color="#0000FF" size="2" face="Arial"><u>CTSPICallAppearance</u></font></h2>
+
+<p><font size="2" face="Arial">This class has been modified to support the new TSPI
+entrypoints in TAPI 3.0 for call handles:</font></p>
+
+<table border="0" width="724">
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>GetCallIDs</strong></font><font
+    size="2"> <strong>(new)</strong></font></td>
+    <td width="468"><font size="2" face="Arial">This is called by the <strong>TSPI_lineGetCallIDs
+    </strong>function to retrieve the call-id and related callid without using the full <strong>TSPI_lineGetCallInfo</strong>
+    function.</font></td>
+  </tr>
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>ReceiveMSPData (new)</strong></font></td>
+    <td width="468"><font size="2" face="Arial">Available override for the <strong>TSPI_lineReceiveMSPData</strong>
+    method. It passes control to the <strong>CTSPILineConnection::ReceiveMSPData</strong> by
+    default..</font></td>
+  </tr>
+</table>
+
+<h2><font color="#0000FF" size="2" face="Arial"><u>CTSPUILineConnection</u></font></h2>
+
+<p><font size="2" face="Arial">This class has been modified to support persistent
+information related to TAPI 3.0 in the <strong>SPLUI</strong> library.</font></p>
+
+<table border="0" width="721">
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>CreateAddress (modified)</strong></font></td>
+    <td width="465"><font size="2" face="Arial">A new parameter <strong>dwAddressType</strong>
+    has been added to the end of the parameter list. It defaults to <strong>LINEADDRESSTYPE_PHONE</strong>,
+    but can be passed in to allow for different address types as defined in TSPI.H</font></td>
+  </tr>
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>SetMSPGUID</strong> <strong>(new)</strong></font></td>
+    <td width="465"><font size="2" face="Arial">This sets the GUID for the associated MSP
+    driver. This enables the MSP support for the given line device. If this is <em>not</em>
+    invoked, then no MSP driver will be available for the line. This causes the GUID to be
+    stored in the persistent data stream and read by the line object.</font></td>
+  </tr>
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>SetProtocolCLSID (new)</strong></font></td>
+    <td width="465"><font size="2" face="Arial">This sets the default protocol CLSID for the
+    line. It defaults to PSTN but may be changed using this API. This causes the GUID to be
+    stored in the persistent data stream and read by the line object.</font></td>
+  </tr>
+</table>
+
+<h2><font color="#0000FF" size="2" face="Arial"><u>CTSPIUIAddressInfo</u></font></h2>
+
+<p><font size="2" face="Arial">This class has been modified to support persistent
+information related to TAPI 3.0 in the <strong>SPLUI</strong> library.</font></p>
+
+<table border="0" width="718">
+  <tr>
+    <td width="248"><font size="2" face="Arial"><strong>Init</strong> <strong>(modified)</strong></font></td>
+    <td width="462"><font size="2" face="Arial">A new parameter <strong>dwAddressType</strong>
+    has been added to the end of the parameter list. It defaults to <strong>LINEADDRESSTYPE_PHONE</strong>
+    as per the above change in <strong>CTSPIUILineConnection::CreateAddress</strong></font></td>
+  </tr>
+</table>
+
+
+</td>
+</tr>
+</table>
+<!------------------------------------------------------------------------->
+
+<hr>
+
+
+
+<BR>
+<BR>
+<center>
+<font size=1>©1999 JulMar Technology, Inc.</font>
+<BR>
+<BR>
+</center>
+</body></HTML>
+
+

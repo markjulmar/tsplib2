@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<title>JulMar Technology TSP++ V3</title>
+<base target="contents">
+</head>
+
+<body bgcolor="#FFFFFF" alink=#23238E vlink=#000000 link=#23238E>
+
+<TABLE cellspacing=3 cellpadding=3>
+<TR valign=top>
+
+<TD colspan=2>
+<P align="right">
+
+<font face="arial, san-serif" size="1"><i>TSP++ Version 2.24 (June 2000)</i></font><FONT face="arial, san-serif" size=-1>
+
+<p><font size="4" face="Verdana, Arial, Helvetica"><a name="intro"><strong>Introduction</strong></font></a></p>
+
+<p><font face="Arial">W</font><font face="Arial" size="2">elcome to TSP++
+Version </font></font><font face="Arial" size="2">2<FONT face="arial, san-serif" size=-1>.0 - the easiest way to create
+1st</font> party Telephony Service Providers
+for Windows. Please read these </font><font face="Arial" size="2">release
+<FONT face="arial, san-serif" size=-1>notes carefully as they </font></font><font face="Arial" size="2">give
+additional or updated information from the documentation.</font></p>
+  <FONT face="arial, san-serif" size=-1>
+  <p><font color="#0000ff" face="Arial" size="2"><b>Build/Test Environment</b></font></p>
+  <p><font face="Arial" size="2">We only support </font></font><font face="Arial" size="2">Microsoft
+  <FONT face="arial, san-serif" size=-1>Visual C++ 6.0 at this time.&nbsp; The
+  product should compile under older versions of Visual C++, back to version
+  4.2, but we do not guarantee or test these </font></font><font face="Arial" size="2">compilers<FONT face="arial, san-serif" size=-1>.</font></font><font face="Arial" size="2">
+  We also <FONT face="arial, san-serif" size=-1>strongly recommend that you up</font></font><font face="Arial" size="2">date
+  your compiler</font><FONT face="arial, san-serif" size=-1><font face="Arial" size="2">
+  to
+the Visual Studio </font></font><FONT face="arial, san-serif" size=-1><font face="Arial" size="2">service pack 2 or better for this product. The pre-built
+binary<FONT face="arial, san-serif" size=-1>
+libraries were built with </font>Visual Studio s<FONT face="arial, san-serif" size=-1>ervice
+</font>p<FONT face="arial, san-serif" size=-1>ack
+3</font> which is available from </font>the </font><FONT face="arial, san-serif" size=-1><font face="Arial" size="2">Microsoft</font>
+  website.</font></p>
+  <FONT face="arial, san-serif" size=-1>
+  <p style="border-style: double"><em><font face="Arial" size="2">If you are using any other version of
+  Visual Studio </font></em></font><em><font face="Arial" size="2">other <FONT face="arial, san-serif" size=-1>than 6.0 with service pack
+  3</font></font><font face="arial, san-serif" size="-1"> installed<font face="Arial" size="2">, you must recompile the libraries
+  to ensure the same versions of </font></font><font face="Arial" size="2">the
+  CRT and </font><font face="arial, san-serif" size="-1">MFC</font><font face="Arial" size="2">
+  are being used as </font><font face="arial, san-serif" size="-1">much
+  of it is<font face="Arial" size="2"> inline
+  implementations and will generally not work </font></font><font face="Arial" size="2">across
+  versions in binary form. In addition, if you have any other SDKs which
+  change the headers for the MFC or CRT libraries, you should also recompile the
+  library to ensure that it matches any TSP that you build with it.&nbsp; This
+  includes the Microsoft Platform SDK CDs or updates through MSDN.</font></em></p>
+  <p align="left"><small><font face="Arial">The 16-bit development libraries
+  require the final version of Microsoft Visual C++ for 16-bit Windows (1.52c).&nbsp;
+  This was shipped with MSDN (Disc 1 -- Development Tools and Microsoft Office
+  Professional for Windows 95 January 1997).&nbsp;&nbsp; It was also shipped
+  with VC++ 4.2.&nbsp; If you have neither of these, you can contact Microsoft
+  and attempt to order the product if it is still available.</font></small></p>
+  <p align="left"><b><font face="Arial" size="2">TAPI 1.x</font></b></p>
+<p align="left"><font face="Arial" size="2">We<FONT face="arial, san-serif" size=-1>
+ recommend that you do </font></font><font face="arial, san-serif" size="-1">the
+  majority of <font face="Arial" size="2">your development
+and testing in the </font></font><font face="Arial" size="2">Windows 95</font><font face="arial, san-serif" size="-1">
+<font face="Arial" size="2">environment </font>without the TAPI 2.1 update installed.&nbsp;
+This will eliminate possible problems with the thunking layer used in TAPI
+2.1.&nbsp;</font></p>
+  <p align="left"><b><font face="Arial" size="2">TAPI 2.x</font></b></p>
+  <p><font face="Arial" size="2">We<FONT face="arial, san-serif" size=-1>
+ recommend that you do </font></font><font face="arial, san-serif" size="-1">the
+  majority of <font face="Arial" size="2">your development
+and testing in the Windows NT 4.</font></font><font face="Arial" size="2">0</font><FONT face="arial, san-serif" size=-1>
+ <font face="Arial" size="2"> </font>checked build </font><FONT face="arial, san-serif" size=-1><font face="Arial" size="2">environment
+  </font>with NT symbols installed.&nbsp; This will allow you to trace the
+  interactions between your TAPI applications, the TAPI system, and your
+  TSP.&nbsp;<font face="Arial" size="2"> </font>We also recommend updating to
+  Windows NT Service Pack 4<font face="Arial" size="2"> </font></font><font face="Arial" size="2">or
+  better (at this writing, Service Pack 5 has been released and is available) in
+  order to get the most stable version of TAPI.</font></p>
+  <FONT face="arial, san-serif" size=-1>
+<h4><font color="#0000ff" face="Arial" size="2">Provided Samples</font></h4>
+<p>The samples come in two different builds -- one for TAPI 1.4 and one for TAPI
+2.x. Please make sure to install the appropriate version if you want to play
+with either sample.</p>
+
+
+
+</font>
+<p><font face="Arial" size="-1">To install the samples:</font></p>
+  <FONT face="arial, san-serif" size=-1>
+<p><small><font face="Arial"><u>Windows 3.1 and Windows 95 with TAPI 1.x:</u></font></small><font size="1"></font><font size="2">
+<ol>
+  <li><font face="Arial">Run the INSTALL.EXE program </font></font></font><font face="Arial" size="2">from
+the </font><font face="Arial" size="2">TSPLIB/16BIT/SAMPLES/BIN directory </font><FONT face="arial, san-serif" size=-1><font size="2"><font face="Arial">and
+choose which providers to install or deinstall.</font></li>
+<li><font face="Arial">If you installed DSSP (the digital sample), then run the
+  EMULATOR.EXE program from the 16-bit samples directory. Make sure to configure
+  the emulator; for information on how to do this, consult the documentation.</font></li>
+</ol>
+</font><u>
+<p></u><u><font face="Arial"><small>Windows NT</small></font></font><font face="Arial" size="-1"><small>,
+Windows 98</small><small> and Windows 95 with TAPI 2.x or Windows 2000 with TAPI
+2.0:</small></font></u>
+  <FONT face="arial, san-serif" size=-1>
+<font size="1">
+<ol>
+  <li></font><font size="2"><font face="Arial">CD to the TSPLIB/32BIT/SAMPLES/BIN
+  directory.</font></li>
+  <li><font face="Arial">Copy the files (ATSP32.TSP, DSSP32.TSP) to the
+    WINNT\SYSTEM32 or WINDOWS\SYSTEM directory.</font></li>
+  <li><font face="Arial">Run the Telephony Control panel applet and &quot;Add a
+    Provider&quot;.</font></li>
+  <li><font face="Arial">If you installed DSSP32 (the digital sample), then run
+    the EMULATOR.EXE program from the 32-bit samples directory. Make sure to
+    configure the emulator; for information on how to do this, consult the
+    documentation.</font></li>
+</ol>
+</font>
+
+
+
+<hr>
+
+<h1><a name="license"><font size="4" face="Verdana, Arial, Helvetica">License
+Agreements</font></a></h1>
+
+<p><font face="Verdana, Arial, Helvetica">
+The Software Products included on the enclosed compact dis</font></font><font face="Verdana, Arial, Helvetica" size="-1">k
+or within the electronic media</font><font face="Verdana, Arial, Helvetica"><FONT face="arial, san-serif" size=-1>
+are licensed to
+you, the end user. Your use of the Software Products are subject
+to the terms of an End User License Agreement (&quot;EULA&quot;)
+accompanying the Software Product</font></font><font face="arial, san-serif" size="-1">s</font><font face="Verdana, Arial, Helvetica" size="-1">.
+</font><font face="Verdana, Arial, Helvetica"><FONT face="arial, san-serif" size=-1>You must read and accept the terms of
+the EULA before you access or use the Software Product</font></font><font face="Verdana, Arial, Helvetica" size="-1">s</font><FONT face="arial, san-serif" size=-1><font face="Verdana, Arial, Helvetica">. If you
+do not agree to the terms of the EULA, you are not authorized to
+use the </font>enclosed <font face="Verdana, Arial, Helvetica">Software Product</font></font><font face="Verdana, Arial, Helvetica" size="-1">s
+and should destroy or return them to the manufacturer</font><font face="Verdana, Arial, Helvetica"><FONT face="arial, san-serif" size=-1>.<p>View the <a href="license.htm" target="contents">license</a>  agreement
+
+
+  </font>
+</font><font face="Verdana, Arial, Helvetica" size="-1"> for TSP++ 2.0</font><FONT face="arial, san-serif" size=-1><font face="Verdana, Arial, Helvetica">.
+</font></p>
+
+<hr>
+
+<font face="Verdana, Arial, Helvetica">
+
+<h1><a name="feedback"><font size="4" face="Verdana, Arial, Helvetica"><b>Feedback</b></font></a></h1>
+
+</font>
+
+
+  </font><p><font face="Verdana, Arial, Helvetica" size="-1">Please </font><FONT face="arial, san-serif" size=-1>mail bug reports or suggestions for
+  </font><font face="Verdana, Arial, Helvetica" size="-1">TSP++</font><font face="Verdana, Arial, Helvetica"><FONT face="arial, san-serif" size=-1>
+ to </font></font>
+
+
+  <font face="Verdana, Arial, Helvetica" size="-1"> <a href="mailto:SdkFdbk@microsoft.com">support</a></font><a href="mailto:SdkFdbk@microsoft.com"><font face="Verdana, Arial, Helvetica"><FONT face="arial, san-serif" size=-1>@</font></font><font face="Verdana, Arial, Helvetica" size="-1">julmar.com</font></a><font face="Verdana, Arial, Helvetica"><FONT face="arial, san-serif" size=-1>.</font></font><font face="Verdana, Arial, Helvetica" size="-1">&nbsp;
+  We are also very interested in the type of hardware you are supporting, the
+features you implement, and what you think of TSP++. Any suggestions or
+criticism is welcome, we want to improve the tools as best as we can to help you
+do your job easier.</font>
+
+
+</td>
+</tr>
+</table>
+<!------------------------------------------------------------------------->
+
+<hr>
+
+
+
+<center>
+<font size=1>&copy;1999 JulMar Technology, Inc.</font>
+<BR>
+<BR>
+</center>
+</body></HTML>
+
+

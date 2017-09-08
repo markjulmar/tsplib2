@@ -1,0 +1,9 @@
+LIBRARY  DLL32
+
+DESCRIPTION  'Sample DLL for 32-bit side of thunking layer'
+
+EXPORTS
+        thk_ThunkData32       
+        
+
+

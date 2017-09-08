@@ -1,0 +1,70 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>TSP++ 2</title>
+<base target="_self">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<P align="right">
+
+<font face="arial, san-serif" size="1"><i>TSP++ Version 2.24 (June 2000)</i></font><FONT face="arial, san-serif" size=-1>
+
+</font>
+<P align="right">
+
+&nbsp;
+<table border="0" width="100%" cellpadding="3">
+  <tr>
+    <td width="50%"><font size="4" face="Verdana, Arial, Helvetica"><a name="intro"><strong><u>Changes
+      for this release</u></strong></a></font></td>
+    <td width="50%"><img border="0" src="images/new.gif" width="9" height="9"> <i>new</i>&nbsp;&nbsp;&nbsp;
+      <img border="0" src="images/bug_fix.gif" width="9" height="9"> <i>fix</i>&nbsp;&nbsp;&nbsp;
+      <img border="0" src="images/back_out.gif" width="9" height="9"> <i>compatibility
+      change</i>
+      <p><font size="2"><b>Note: all changes are for 32-bit version only</b></font></td>
+  </tr>
+</table>
+<p>
+      <img border="0" src="images/back_out.gif" width="9" height="9">    Changed
+      the <b>CTSPICallAppearance::Drop</b> function to return a zero return code
+      when <b>lineDrop</b> is called multiple times with a pending drop
+      operation in effect.&nbsp; Previous versions returned <b>LINEERR_OPERATIONUNAVAIL</b>
+      and cause Microsoft Outlook 2000 to report an error.&nbsp; This is likely
+      a bug in Outlook as it is calling <u><b>lineDrop</b></u> multiple times
+      for the same call without waiting for the result, but TSP++ has changed to
+      stop the error box from appearing.</p>
+<p>
+      <img border="0" src="images/bug_fix.gif" width="9" height="9">   <font face="Verdana, Arial, Helvetica, Geneva" size="2">Changed
+the <b>CServiceProvider::ConvertDialableToCannonical</b> to ignore numbers which
+are not fully 10-digits. This is for international and internal PBX support.</font></p>
+<p>
+      <img border="0" src="images/bug_fix.gif" width="9" height="9">   Corrected
+a bug in the ATSP sample when <b>lineConfig</b> is used to configure a specific
+line device.</p>
+<p>
+      <img border="0" src="images/back_out.gif" width="9" height="9">    Added a
+check to ensure that the highest negotiated version available is TAPI 2.1 to
+preserve the proper structure length for the pre-built librares.&nbsp; Added the
+<b>TAPI_CURRENT_VERSION</b> constant to both samples.</p>
+<p><img border="0" src="images/bug_fix.gif" width="9" height="9">   Corrected a
+bug in calling the <b>CanSupportCall</b> function when processing the <b>LINECALLPARAMS</b>
+structure.</p>
+<p><img border="0" src="images/bug_fix.gif" width="9" height="9">   Corrected a
+bug when sizing structures for Unicode.</p>
+
+<hr>
+
+
+
+<center>
+<font size=1>&copy;2000 JulMar Technology, Inc.</font>
+<BR>
+</center>
+
+</body>
+</html>

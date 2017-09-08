@@ -1,0 +1,15 @@
+enablemapdirect3216 = true;
+
+typedef void *LPVOID;
+typedef unsigned short WORD;
+typedef unsigned long  DWORD;
+
+void DeviceNotify16(WORD wCommand,
+		    DWORD dwConnId,
+		    DWORD dwData,
+		    LPVOID lpBuff,
+      		    DWORD dwSize)
+{
+    lpBuff = input;
+}
+

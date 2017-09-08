@@ -1,0 +1,12 @@
+//
+// EMULATOR.RC2 - resources App Studio does not edit directly
+//
+
+#ifdef APSTUDIO_INVOKED
+    #error this file is not editable by App Studio
+#endif //APSTUDIO_INVOKED
+
+// Ringer sounds
+IDW_RINGSOUND1  WAVE "RES\\RING1.WAV"
+IDW_RINGSOUND2  WAVE "RES\\RING2.WAV"
+IDW_RINGSOUND3  WAVE "RES\\RING3.WAV"

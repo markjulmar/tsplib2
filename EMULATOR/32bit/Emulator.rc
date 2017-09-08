@@ -1,0 +1,451 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""res\\emulator.rc2""\r\n"
+    "#include ""afxres.rc""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_HOLD                BITMAP                  "RES\\HOLD.BMP"
+IDB_RELEASE             BITMAP                  "RES\\RELEASE.BMP"
+IDB_DIAL                BITMAP                  "RES\\DIAL.BMP"
+IDB_INCOMING            BITMAP                  "RES\\INCOMING.BMP"
+IDB_BUSY                BITMAP                  "RES\\BUSY.BMP"
+IDB_ANSWER              BITMAP                  "RES\\ANSWER.BMP"
+IDB_GENERATE            BITMAP                  "RES\\GENERATE.BMP"
+IDB_EXIT                BITMAP                  "RES\\EXIT.BMP"
+IDB_CONFIG              BITMAP                  "RES\\CONFIG.BMP"
+IDB_RESET               BITMAP                  "RES\\RESET.BMP"
+IDB_LEFT                BITMAP                  "RES\\LEFT.BMP"
+IDB_RIGHT               BITMAP                  "RES\\RIGHT.BMP"
+IDB_DIGITS              BITMAP                  "RES\\DIGITS.BMP"
+IDB_HELPME              BITMAP                  "RES\\HELPME.BMP"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EMULATOR DIALOGEX 0, 0, 278, 278
+STYLE DS_SETFONT | DS_3DLOOK | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Digital Emulator © 1999-2004 JulMar Technology, Inc."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Display:",IDC_STATIC,6,4,49,8
+    EDITTEXT        IDC_DISPLAY,6,15,185,25,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY | WS_DISABLED | NOT WS_TABSTOP
+    LTEXT           "Phone command information:",IDC_STATIC,7,45,105,8
+    LISTBOX         IDC_DEBUGINFO,6,55,105,100,LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "Handset Information",IDC_STATIC,5,187,106,82
+    CONTROL         "Handset Offhook",IDC_HANDSET,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,13,199,89,12
+    CONTROL         "Speaker Offhook",IDC_SPEAKER,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,13,213,89,12
+    CONTROL         "MicrophoneOffhook",IDC_MICROPHONE,"Button",
+                    BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,13,227,89,12
+    CONTROL         "&Message Waiting Lamp",IDC_MSGWAITING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,123,45,94,10
+    GROUPBOX        "Indicators",IDC_STAT_INDICATOR,119,57,104,177
+    PUSHBUTTON      "0",IDC_BUTTON0,191,207,27,17
+    PUSHBUTTON      "0",IDC_BUTTON1,191,187,27,17
+    PUSHBUTTON      "0",IDC_BUTTON2,191,167,27,17
+    PUSHBUTTON      "0",IDC_BUTTON3,191,147,27,17
+    PUSHBUTTON      "0",IDC_BUTTON4,191,128,27,17
+    PUSHBUTTON      "0",IDC_BUTTON5,191,109,27,17
+    PUSHBUTTON      "0",IDC_BUTTON6,191,90,27,17
+    PUSHBUTTON      "0",IDC_BUTTON7,191,71,27,17
+    PUSHBUTTON      "0",IDC_BUTTON8,123,207,27,17
+    PUSHBUTTON      "0",IDC_BUTTON9,123,187,27,17
+    PUSHBUTTON      "0",IDC_BUTTON10,123,167,27,17
+    PUSHBUTTON      "0",IDC_BUTTON11,123,147,27,17
+    PUSHBUTTON      "0",IDC_BUTTON12,123,128,27,17
+    PUSHBUTTON      "0",IDC_BUTTON13,123,109,27,17
+    PUSHBUTTON      "0",IDC_BUTTON14,123,90,27,17
+    PUSHBUTTON      "0",IDC_BUTTON15,123,71,27,17
+    CONTROL         "&Hold",IDC_HOLD,"Button",BS_OWNERDRAW | WS_TABSTOP,239,
+                    29,24,18
+    CONTROL         "R&elease",IDC_RELEASE,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,239,53,24,18
+    CONTROL         "&Dial",IDC_DIAL,"Button",BS_OWNERDRAW | WS_TABSTOP,239,
+                    77,24,18
+    CONTROL         "&Incoming",IDC_MAKECALL,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,239,101,24,18
+    CONTROL         "&Busy",IDC_BUSY,"Button",BS_OWNERDRAW | WS_TABSTOP,239,
+                    125,24,18
+    CONTROL         "&Answer",IDC_ANSWERED,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,239,149,24,18
+    CONTROL         "&Generate Codes",IDC_GENERATE,"Button",BS_OWNERDRAW | 
+                    WS_DISABLED | WS_TABSTOP,239,173,24,18
+    PUSHBUTTON      "Reset",IDC_RESET,135,244,36,18
+    PUSHBUTTON      "&Configure",IDC_CONFIGURE,175,244,36,18
+    ICON            "",IDC_LAMP0,170,204,20,20
+    ICON            "",IDC_LAMP1,170,185,20,20
+    ICON            "",IDC_LAMP2,170,166,20,20
+    ICON            "",IDC_LAMP3,170,146,20,20
+    ICON            "",IDC_LAMP4,170,127,20,20
+    ICON            "",IDC_LAMP5,170,107,20,20
+    ICON            "",IDC_LAMP7,170,69,20,20
+    ICON            "",IDC_LAMP6,170,88,20,20
+    ICON            "",IDC_LAMP8,152,204,20,20
+    ICON            "",IDC_LAMP9,152,185,20,20
+    ICON            "",IDC_LAMP10,152,166,20,20
+    ICON            "",IDC_LAMP11,152,146,20,20
+    ICON            "",IDC_LAMP12,152,127,20,20
+    ICON            "",IDC_LAMP13,152,107,20,20
+    ICON            "",IDC_LAMP15,152,69,20,20
+    ICON            "",IDC_LAMP14,152,88,20,20
+    GROUPBOX        "Functions",IDC_STATIC,229,11,42,223
+    CONTROL         "",IDC_VOLDN,"Button",BS_OWNERDRAW | WS_TABSTOP,16,247,8,
+                    8
+    CONTROL         "",IDC_GAINDN,"Button",BS_OWNERDRAW | WS_TABSTOP,16,256,
+                    8,8
+    CONTROL         "",IDC_VOLUP,"Button",BS_OWNERDRAW | WS_TABSTOP,96,247,8,
+                    8
+    CONTROL         "",IDC_GAINUP,"Button",BS_OWNERDRAW | WS_TABSTOP,96,256,
+                    8,8
+    LTEXT           "V:",IDC_STATIC,9,247,8,10
+    LTEXT           "G:",IDC_STATIC,9,256,8,10
+    CONTROL         "&Generate Tone",IDC_GENERATETONE,"Button",BS_OWNERDRAW | 
+                    WS_DISABLED | WS_TABSTOP,239,197,24,18
+    COMBOBOX        IDC_RINGER,6,170,106,67,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Ringer Style:",IDC_STATIC,6,160,100,8
+    PUSHBUTTON      "Help",IDC_CONTEXT_HELP,215,244,36,18
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME,2,0,274,274,
+                    WS_EX_DLGMODALFRAME
+    CONTROL         "Progress1",IDC_VOLUMEBAR,"msctls_progress32",WS_BORDER,
+                    25,247,70,8
+    CONTROL         "Progress1",IDC_GAINBAR,"msctls_progress32",WS_BORDER,25,
+                    256,70,8
+END
+
+IDD_CALLNUMBER DIALOG  0, 0, 166, 205
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Incoming Call"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,3,7,158,59
+    LTEXT           "Calling Number:",IDC_STATCALL1,11,17,53,8
+    EDITTEXT        IDC_CALLINGNUM,69,16,80,12,ES_AUTOHSCROLL
+    LTEXT           "Calling Name:",IDC_STATCALL2,12,34,46,8
+    EDITTEXT        IDC_CALLINGNAME,69,32,80,12,ES_AUTOHSCROLL
+    LTEXT           "Select media type(s)",IDC_STATIC,5,77,80,8
+    PUSHBUTTON      "Clear Selections",IDC_BTN_CLEAR,95,71,61,14
+    LISTBOX         IDC_MEDIALIST,3,89,159,62,LBS_SORT | LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Incoming Line:",IDC_STATIC,5,162,51,10
+    COMBOBOX        IDC_PHONENUMBER,64,160,97,69,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Dial",IDOK,20,185,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,94,185,50,14
+    CONTROL         "E&xternal Call (from outside trunk)",IDC_EXTERNAL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,49,139,10
+END
+
+IDD_CONFIGURE DIALOG  0, 0, 197, 150
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION
+CAPTION "Function Buttons"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "",IDC_BUTTON0,147,119,37,12,WS_GROUP
+    PUSHBUTTON      "",IDC_BUTTON1,147,107,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON2,147,95,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON3,147,83,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON4,147,71,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON5,147,59,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON6,147,47,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON7,147,35,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON8,110,119,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON9,110,107,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON10,110,95,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON11,110,83,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON12,110,71,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON13,110,59,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON14,110,47,37,12,NOT WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON15,110,35,37,12,NOT WS_TABSTOP
+    LISTBOX         IDC_LIST_FUNCTIONS,7,30,80,107,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "Select the desired function, then press a button to assign the function to it",
+                    IDC_STATIC,11,7,168,18
+    GROUPBOX        "",IDC_STATIC,7,0,183,27
+    GROUPBOX        "",IDC_STATIC,105,26,84,112
+END
+
+IDD_DIALGENERATE DIALOG  0, 0, 132, 139
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Remote Digit Generation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Close",IDOK,58,117,35,14
+    PUSHBUTTON      "0",IDC_BUTTON0,37,80,23,20
+    PUSHBUTTON      "1",IDC_BUTTON1,11,11,23,20
+    PUSHBUTTON      "2",IDC_BUTTON2,37,11,23,20
+    PUSHBUTTON      "3",IDC_BUTTON3,63,11,23,20
+    PUSHBUTTON      "4",IDC_BUTTON4,11,34,23,20
+    PUSHBUTTON      "5",IDC_BUTTON5,37,34,23,20
+    PUSHBUTTON      "6",IDC_BUTTON6,63,34,23,20
+    PUSHBUTTON      "7",IDC_BUTTON7,11,57,23,20
+    PUSHBUTTON      "8",IDC_BUTTON8,37,57,23,20
+    PUSHBUTTON      "9",IDC_BUTTON9,63,57,23,20
+    PUSHBUTTON      "*",IDC_BUTTON10,11,80,23,20
+    PUSHBUTTON      "#",IDC_BUTTON11,63,80,23,20
+    CONTROL         "Pulse",IDC_CHECK_PULSE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,119,30,10
+    PUSHBUTTON      "A",IDC_BTN_A,98,11,23,20
+    PUSHBUTTON      "B",IDC_BTN_B,99,34,23,20
+    PUSHBUTTON      "C",IDC_BTN_C,98,57,23,20
+    PUSHBUTTON      "D",IDC_BTN_D,98,80,23,20
+END
+
+IDD_ADDRESS_SETUP DIALOG  0, 0, 197, 150
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Address Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LINELIST,8,41,79,83,LBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_ADDRESS,95,75,90,13,ES_AUTOHSCROLL
+    LTEXT           "Address Appearances",IDC_STATIC,8,31,74,8
+    LTEXT           "&Address (Extension):",IDC_STATIC,96,64,72,8
+    CTEXT           "Select a call address in the listbox to set the configuration on",
+                    IDC_STATIC,12,6,171,18
+    GROUPBOX        "",IDC_STATIC,7,0,183,27
+END
+
+IDD_GENERAL_SETUP DIALOG  0, 0, 197, 150
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "General Setup"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_NAME,9,45,96,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SWINFO,9,82,177,37,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "&Name (for station)",IDC_STATIC,9,34,75,8
+    CTEXT           "General information setup",IDC_STATIC,12,6,171,18
+    GROUPBOX        "",IDC_STATIC,7,0,183,27
+    LTEXT           "&Switch Information",IDC_STATIC,10,69,75,8
+END
+
+IDD_GENTONE DIALOG  0, 0, 187, 122
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Remote Tone Generation"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Close",IDOK,99,101,50,14
+    LISTBOX         IDC_TONELIST,9,16,165,44,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Pre-defined tone:",IDC_PREDEFINED,"Button",
+                    BS_AUTORADIOBUTTON,11,5,68,10
+    CONTROL         "&User-defined tone:",IDC_USERDEFINED,"Button",
+                    BS_AUTORADIOBUTTON,11,65,74,10
+    EDITTEXT        IDC_FREQ1,10,76,49,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_FREQ2,67,76,49,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_FREQ3,123,76,49,14,ES_AUTOHSCROLL | WS_DISABLED
+    PUSHBUTTON      "&Generate",IDC_GENERATE,38,101,50,14
+END
+
+IDD_ABOUT DIALOGEX 0, 0, 187, 94
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About the Emulator..."
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,69,75,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,1,1,184,70
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,6,20,20
+    CTEXT           "Digital Switch Emulator 2.02",IDC_TITLE,32,11,125,11
+    CTEXT           "Copyright © 1999-2004 JulMar Technology, Inc.\rAll rights reserved.",
+                    IDC_STATIC,6,30,175,17,SS_NOPREFIX
+    CTEXT           "Look on www.julmar.com for updates and tools.",
+                    IDC_STATIC,5,56,178,9,SS_NOPREFIX
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "RES\\EMULATOR.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST	"app.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_EMULATOR DLGINIT
+BEGIN
+    IDC_RINGER, 0x403, 14, 0
+0x6952, 0x676e, 0x5320, 0x7974, 0x656c, 0x2320, 0x0031, 
+    IDC_RINGER, 0x403, 14, 0
+0x6952, 0x676e, 0x5320, 0x7974, 0x656c, 0x2320, 0x0032, 
+    IDC_RINGER, 0x403, 14, 0
+0x6952, 0x676e, 0x5320, 0x7974, 0x656c, 0x2320, 0x0033, 
+    IDC_RINGER, 0x403, 11, 0
+0x6952, 0x676e, 0x7265, 0x4f20, 0x4646, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDC_HOLD                "Hold Call"
+    IDC_RELEASE             "Release Call"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_EXIT                "Terminate emulator"
+    IDC_GENERATETONE        "Generate Tone"
+    IDC_DIAL                "Dial Number"
+    IDC_CONFIGURE           "Configuration"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_RESET               "Reset emulator"
+    IDC_MAKECALL            "Start Incoming Call"
+    IDS_NOSERVER            "The socket failed to bind to the port."
+    IDC_BUSY                "Send Busy Indicator"
+    IDC_ANSWERED            "Answer Call"
+    IDC_GENERATE            "Generate Codes"
+    IDS_NOSOCKETS           "The WinSock interface failed to start.\nThe server cannot run without socket support."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_DISPLAY2            "This holds the current display for the phone. It will change as different calls become active, or different options on the phone are used."
+    IDC_MSGWAITING2         "The message waiting lamp may be used to trigger line state messages in the provider."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_DEBUGINFO2          "This holds the communication requests received and sent to the DSSP service provider."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_VOLUMEBAR2          "This shows the current volume level of the handset speaker."
+    IDC_GAINBAR2            "This shows the current gain level of the handset microphone."
+    IDC_RINGER2             "The ringer choice determines which sound is played when incoming calls are received."
+    IDC_STAT_INDICATOR2     "These are the function buttons and lamps which allow manipulation of calls on the phone."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_RESET2              "This will reset the emulator to the initial state.  The service provider is not notified about any changes."
+    IDC_MAKECALL2           "This is used to initiate an incoming call of different media modes."
+    IDC_HANDSET2            "The handset control turns the MIC/SPEAKER on or off."
+    IDC_BUSY2               "This is used to simulate a busy signal for an outgoing call."
+    IDC_ANSWERED2           "This is used to simulate a remote pickup for an outgoing call."
+    IDC_GENERATE2           "This is used to simulate remote digit generation for a connected call."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_SPEAKER2            "This option may be turned on and off to reflect the handset speaker state."
+    IDC_MICROPHONE2         "This option may be turned on and off to reflect the handset microphone state."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_HOLD2               "This is used to force a call into the HOLDing state. The change will be reflected in the service provider."
+    IDC_RELEASE2            "This is used to release the currently active call."
+    IDC_EXIT2               "This will terminate the emulator.  It should not be used while the service provider is running."
+    IDC_GENERATETONE2       "This is used to simulate remote tone generation for an active call."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_DIAL2               "This is used to simulate local digit dialing."
+    IDC_CONFIGURE2          "This allows the emulator to be configured, it may only be used when the service provider is not running."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_CONTEXT_HELP        "Context sensitive help"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "res\emulator.rc2"
+#include "afxres.rc"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,186 @@
+//Microsoft App Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+#ifdef APSTUDIO_INVOKED
+//////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""ATSP.r2c""  // non-App Studio edited resources\r\n"
+    "\r\n"
+    "#include ""afxres.rc""  // Standard components\r\n"
+    "\0"
+END
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // APSTUDIO_INVOKED
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CFGDLG DIALOG DISCARDABLE  20, 15, 272, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ATSPV2 Modem configuration"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "&Communications Port",IDC_STATIC,9,7,70,9,NOT WS_GROUP
+    COMBOBOX        IDC_PORT,9,18,76,52,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Maximum &Speed",IDC_STATIC,97,7,70,10,NOT WS_GROUP
+    COMBOBOX        IDC_SPEED,97,18,76,53,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Phone &Number (line address)",IDC_STATIC,8,35,102,8
+    EDITTEXT        IDC_LINEADDR,9,45,164,12,ES_AUTOHSCROLL
+    LTEXT           "Address owner (user of this phone)",IDC_STATIC,8,62,164,
+                    8
+    EDITTEXT        IDC_ADDRNAME,9,72,164,12,ES_AUTOHSCROLL
+    LTEXT           "&Additional Initialization String",IDC_STATIC,9,90,115,
+                    8
+    EDITTEXT        IDC_INITSTR,9,101,164,12,ES_AUTOHSCROLL
+    CONTROL         "Dial using &Pulse Mode",IDC_PULSE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,183,102,83,10
+    DEFPUSHBUTTON   "&OK",IDOK,189,7,70,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,189,29,70,14
+    CTEXT           "This is a sample program \251  J.E.T..  All rights reserved.",
+                    IDC_STATIC,33,136,203,10
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,22,128,227,25
+END
+
+IDD_TALKDROP DIALOG DISCARDABLE  20, 15, 182, 88
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Call Status"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Talk",IDC_TALK,33,65,51,17
+    PUSHBUTTON      "Hang &Up",IDC_DROP,100,65,50,17
+    ICON            IDI_PHONE,IDC_STATIC,6,5,18,20
+    LTEXT           "Lift the receiver and click Talk.\r\rTo disconnect, press the Hang-Up button.",
+                    IDC_STATIC,38,3,132,35
+    LTEXT           "Elapsed Time:",IDC_STATIC,41,44,51,9
+    LTEXT           "0 seconds",IDC_ELAPSEDTIME,99,44,55,9
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CFGDLG DLGINIT
+BEGIN
+    103, 0x403, 5, 0
+0x4f43, 0x314d, "\000" 
+    103, 0x403, 5, 0
+0x4f43, 0x324d, "\000" 
+    103, 0x403, 5, 0
+0x4f43, 0x334d, "\000" 
+    103, 0x403, 5, 0
+0x4f43, 0x344d, "\000" 
+    104, 0x403, 4, 0
+0x3033, 0x0030, 
+    104, 0x403, 5, 0
+0x3231, 0x3030, "\000" 
+    104, 0x403, 5, 0
+0x3432, 0x3030, "\000" 
+    104, 0x403, 5, 0
+0x3639, 0x3030, "\000" 
+    104, 0x403, 6, 0
+0x3931, 0x3032, 0x0030, 
+    104, 0x403, 6, 0
+0x3833, 0x3034, 0x0030, 
+    104, 0x403, 6, 0
+0x3735, 0x3036, 0x0030, 
+    104, 0x403, 7, 0
+0x3131, 0x3235, 0x3030, "\000" 
+    0
+END
+
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+IDI_PHONE               ICON    DISCARDABLE     "PHONE.ICO"
+
+//////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDS_PROVIDERNAME        "ATSP V2.00 (C++) Example"
+    IDS_NORESPONSE          "The modem does not seem to be responding to requests.\nPlease check the serial connection to the modem and make sure it\nis properly setup in the configuration dialog for ATSP."
+    IDS_LINENAME            "ATSPV2 Sample Analog driver"
+    IDS_ADDRNAME            "AddressName"
+    IDS_CR                  "\r"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDS_PORT                "Port"
+    IDS_BAUD                "Speed"
+    IDS_PULSE               "PulseDial"
+    IDS_INITSTR             "InitString"
+    IDS_LINEADDR            "LineAddress"
+    IDS_NUMLINES            "NumLines"
+    IDS_NUMPHONES           "NumPhones"
+    IDS_OFFHOOK             "ATDW;\r"
+    IDS_MODEMINIT           "AT &F E0 V1 &D2 &C1 S0=0 S30=0 L0M1\\N3&K3B0N1X4S11=%luS8=%luS7=%lu%s\r"
+    IDS_DIAL                "ATD%c%s"
+    IDS_MODEMATDT           "ATD\r"
+    IDS_HANGUP              "ATH0\r"
+    IDS_ERR_INVALIDPORT     "You have not selected a valid COMM port."
+    IDS_ERR_INVALIDBAUD     "You have not selected a valid data rate."
+    IDS_ERR_NOLINEADDR      "You have not supplied a line address (phone #)."
+    IDS_PROVIDER            "ATSPV2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RESETMODEM          "ATZ\r\n"
+    IDS_ANSWER              "ATA\r"
+END
+
+
+#ifndef APSTUDIO_INVOKED
+////////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "ATSP.r2c"  // non-App Studio edited resources
+
+#include "afxres.rc"  // Standard components
+
+/////////////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,32 @@
+#include <windows.h>
+#include <winver.h>
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     4,0,0,0
+PRODUCTVERSION  4,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       (VS_FF_PRIVATEBUILD|VS_FF_PRERELEASE|VS_FF_DEBUG)
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_DLL
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4"
+        BEGIN
+            VALUE "Mark C. Smith\0"
+            VALUE "32to16 Sample Thunk TSP DLL\0"
+            VALUE "1.00\0"
+            VALUE "COMPANION32\0"
+            VALUE "Copyright \251 1996, Mark C. Smith\0"
+            VALUE "\0" 
+            VALUE "COMPANION32.EXE\0"
+            VALUE "1.00\0"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

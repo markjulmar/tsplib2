@@ -1,0 +1,48 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<title>TSP++ Y2K statement</title>
+<base target="_self">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p><font size="4" face="Verdana, Arial, Helvetica"><a name="intro"><strong>Year
+2000 compliance</strong></a></font></p>
+
+<p ALIGN="JUSTIFY"><font size="3">We recognize that there is much uncertainty within the
+technology industry regarding the &quot;year 2000&quot; issue. JulMar Technology would
+like to resolve any uncertainty you may have regarding our TSP++ products. </p>
+
+<p>The TSP++ products do not use software time or date code and will therefore should be
+unaffected by the date change to the year 2000. All time-related functionality is
+performed using milliseconds that are taken directly from the Windows operating system. No
+conversion to any other form is done with these values and they are stored internally as
+32-bit <b> DWORD</b> numbers. They are used only for elapsed time calculations with no reliance
+upon day, month, or year.</p>
+
+<p>The TSP++ libraries do rely upon specific operating system services that use
+millisecond timeout values. Since these timeout values are not date-dependant and no
+conversion occurs within the operating system, the chance for failure of these functions
+due to Y2K issues should be fairly low. It is recommended that any shipped service
+provider be run on the latest service packs from Microsoft in order to alleviate any known
+Windows Y2K issues.</p>
+
+<p>This warranty statement only applies to the basic TSP++ library and sample code
+provided, not necessarily to any TAPI service provider developed with that product.</font></p>
+
+<p>Thank you for using our products,</p>
+
+<p><em>JulMar Technology, Inc.</em></p>
+
+<hr>
+
+
+
+<center>
+<font size=1>&copy;1999 JulMar Technology, Inc.</font>
+<BR>
+</center>
+</body>
+</html>
